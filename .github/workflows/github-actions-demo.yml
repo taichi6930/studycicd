@@ -1,0 +1,15 @@
+# github actionsの作成
+name: github-actions-test # name: github actionsが実行されるときの名前
+on: # on: github actionsが実行される条件
+    push: # push: pushされたとき
+        branches: # branches: どのブランチがpushされたとき
+            - main
+    # pull_request: masterに向けたpull requestが作成されたとき
+    pull_request:
+        branches:
+            - main
+jobs: # jobs: github actionsの実行内容
+    build: # build: このgithub actionsの名前
+        runs-on: ubuntu-latest # runs-on: このgithub actionsを実行する環境
+        steps: # steps: このgithub actionsの実行内容
+            - run: echo "Hello World" # run: 実行するコマンド
